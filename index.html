@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <script>
+    document
+      .getElementById("myForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Retrieve form data
+        var formData = new FormData(this);
+
+        // Send form data to the server
+        fetch("https://srayanem.github.io", {
+          method: "POST",
+          body: formData,
+        })
+          .then(function (response) {
+            // Handle the server response
+            console.log("Form data sent successfully");
+            // Optionally, you can display a success message or redirect the user to a thank-you page.
+          })
+          .catch(function (error) {
+            // Handle errors
+            console.error("Error sending form data:", error);
+          });
+      });
+  </script>
   <head>
     <title>Heart and Poem Website</title>
     <style>
@@ -106,29 +131,34 @@
     </div>
     <div class="heart">❤️</div>
     <div class="poem">
-      <p>
-        You didn't let me buy you a gift earlier, so now you can pick whatever
-        you want!
-      </p>
-      <label class="container">
-        Rare beauty blush
-        <input type="checkbox" checked="checked" />
-        <span class="checkmark"></span>
-      </label>
+      <form id="myForm" action="https://srayanem.github.io" method="POST">
+        <p>
+          You didn't let me buy you a gift earlier, so now you can pick whatever
+          you want!
+        </p>
+        <label class="container">
+          Rare beauty blush
+          <input type="checkbox" checked="checked" />
+          <span class="checkmark"></span>
+        </label>
 
-      <label class="container">
-        Fenty lip gloss
-        <input type="checkbox" />
-        <span class="checkmark"></span>
-      </label>
+        <label class="container">
+          Fenty lip gloss
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
 
-      <label class="container">
-        Anything else you want
-        <input type="checkbox" />
-        <span class="checkmark"></span>
-      </label>
+        <label class="container">
+          Anything else you want
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
 
-      <p>PS I will do whatever you want me to 😘😉</p>
+        <label for="request">PS I will do whatever you want me to 😘😉</label>
+        <br />
+        <input type="text" id="request" name="request" />
+        <input type="submit" width="500" height="500" />
+      </form>
     </div>
   </body>
 </html>
