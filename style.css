@@ -1,0 +1,33 @@
+
+      body {
+        background-color: #f8f8f8;
+        background-image: linear-gradient(315deg, #ffffff 0%, #f47b7b 74%);
+        font-family: Arial, sans-serif;
+      }
+
+      p.main_p {
+        position: relative;
+        padding: 1em;
+        font-family: 'Old Standard TT', serif;
+        text-align: left;
+        margin: 2%;
+        top: 110px;
+        
+      }
+
+      h1.happy{
+        position: relative;
+        margin: 2%;
+        font-family: 'Old Standard TT', serif;
+        font-size: 60px;
+
+      }
+
+      div.video{
+        position: absolute;
+        right: 0px;
+        top: -10px;
+        padding: 20px;
+        
+      }
+
